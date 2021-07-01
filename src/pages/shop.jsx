@@ -3,7 +3,7 @@ import ShopList from '../components/shopList';
 
 class Shop extends Component {
   render() {
-    const { shopCategories, socialLinks } = this.props.shop;
+    const { shopCategories, socialLinks, items } = this.props.shop;
     return (
       <div className="shop-page d-flex">
         <aside className="categories-aside">
@@ -25,7 +25,7 @@ class Shop extends Component {
           </div>
         </aside>
         <main>
-          <ShopList />
+          <ShopList items={items} />
         </main>
       </div>
     );
