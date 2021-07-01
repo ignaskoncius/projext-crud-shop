@@ -28,10 +28,10 @@ class App extends Component {
       ],
       items: [
         { _id: 1, title: 'Redneck hat', price: 99.99, image: 'acc_hat_01_', color: 'Green', size: 'L' },
-        { _id: 2, title: 'Navy jeans', price: 1199.99, image: 'jack_jeans_01_', color: 'Navy', size: 'M' },
+        { _id: 2, title: 'Redneck jeans', price: 1199.99, image: 'jack_jeans_01_', color: 'Navy', size: 'M' },
         {
           _id: 3,
-          title: 'Granite Oversized T-Shirt',
+          title: 'Redneck T-Shirt',
           price: 369.99,
           image: 'shirt_01_',
           color: 'Washed Black',
@@ -47,6 +47,7 @@ class App extends Component {
         <div className="container">
           <Switch>
             {/* kai reikia perduoti props i route mes tai darom su sekancia sintakse */}
+
             <Route path="/shop" render={(props) => <Shop shop={this.state.shop} {...props} />} />
             <Route exact path="/" component={Home} />
           </Switch>

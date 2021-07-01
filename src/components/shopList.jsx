@@ -6,7 +6,7 @@ class ShopList extends Component {
     return (
       <div className="shop-list d-flex">
         {this.props.items.map((item) => (
-          <ShopItem key={item._id} />
+          <ShopItem key={item._id} item={item} />
         ))}
       </div>
     );

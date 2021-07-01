@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router';
 import ShopList from '../components/shopList';
+import SingleItem from '../components/shopSingleItem';
 
 class Shop extends Component {
   render() {
@@ -25,7 +27,10 @@ class Shop extends Component {
           </div>
         </aside>
         <main>
-          <ShopList items={items} />
+          <Switch>
+            <Route path="/shop/item/1" render={(props) => <SingleItem {...props} />} />
+            <Route path="/shop" render={(props) => <ShopList items={items} {...props} />} />
+          </Switch>
         </main>
       </div>
     );
