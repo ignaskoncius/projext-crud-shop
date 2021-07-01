@@ -22,9 +22,21 @@ class App extends Component {
         { _id: 5, title: 'T-Shirts' },
       ],
       socialLinks: [
-        { to: 'www.facebook.com', icon: 'fa fa-facebook' },
-        { to: 'www.twitter.com', icon: 'fa fa-twitter' },
-        { to: 'www.instagram.com', icon: 'fa fa-instagram' },
+        { to: 'https://www.facebook.com', icon: 'fa fa-facebook' },
+        { to: 'https://www.twitter.com', icon: 'fa fa-twitter' },
+        { to: 'https://www.instagram.com', icon: 'fa fa-instagram' },
+      ],
+      items: [
+        { _id: 1, title: 'Redneck hat', price: 99.99, image: 'acc_hat_01_', color: 'Green', size: 'L' },
+        { _id: 2, title: 'Navy jeans', price: 1199.99, image: 'jack_jeans_01_', color: 'Navy', size: 'M' },
+        {
+          _id: 3,
+          title: 'Granite Oversized T-Shirt',
+          price: 369.99,
+          image: 'shirt_01_',
+          color: 'Washed Black',
+          size: 'XL',
+        },
       ],
     },
   };

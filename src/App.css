@@ -19,6 +19,10 @@ a {
   margin: 0 auto;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* Variables */
 :root {
   --primary: #333;
@@ -29,6 +33,7 @@ a {
 
 .d-flex {
   display: flex;
+  gap: 1em;
 }
 .space-between {
   justify-content: space-between;
@@ -52,8 +57,13 @@ a {
 /* Shop page */
 
 /* ---categories */
+.categories-aside {
+  min-width: 150px;
+}
+
 .categories ul {
   margin-top: 2em;
+  margin-bottom: 0.5em;
   list-style: none;
   padding-left: 0;
 }
@@ -65,4 +75,18 @@ a {
 
 .categories .categories-list-item:first-child {
   border-top: 1px solid var(--primary);
+}
+
+.social__link {
+  margin-right: 0.5em;
+}
+
+/* Shop item */
+.shop-item {
+  text-align: center;
+}
+.shop-item .item-title {
+  font-size: 1em;
+  font-weight: normal;
+  margin-bottom: 0.2em;
 }

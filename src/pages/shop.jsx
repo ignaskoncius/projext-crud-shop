@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import ShopList from '../components/shopList';
 
 class Shop extends Component {
   render() {
     const { shopCategories, socialLinks } = this.props.shop;
     return (
-      <div className="shop-page">
+      <div className="shop-page d-flex">
         <aside className="categories-aside">
           <div className="categories">
             <ul>
@@ -17,12 +18,15 @@ class Shop extends Component {
           </div>
           <div className="social">
             {socialLinks.map((item) => (
-              <a href={item.to}>
-                <i key={item.to} className={item.icon}></i>
+              <a key={item.to} href={item.to} target="_blank" rel="noreferrer" className="social__link">
+                <i className={item.icon}></i>
               </a>
             ))}
           </div>
         </aside>
+        <main>
+          <ShopList />
+        </main>
       </div>
     );
   }
