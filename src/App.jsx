@@ -4,6 +4,7 @@ import './App.css';
 import HeaderX from './components/headerX';
 import Home from './pages/home';
 import Shop from './pages/shop';
+import 'font-awesome/css/font-awesome.css';
 
 class App extends Component {
   state = {
@@ -33,6 +34,7 @@ class App extends Component {
         <HeaderX navLinks={this.state.navLinks} />
         <div className="container">
           <Switch>
+            {/* kai reikia perduoti props i route mes tai darom su sekancia sintakse */}
             <Route path="/shop" render={(props) => <Shop shop={this.state.shop} {...props} />} />
             <Route exact path="/" component={Home} />
           </Switch>

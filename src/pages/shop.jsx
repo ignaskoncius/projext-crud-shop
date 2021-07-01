@@ -1,11 +1,28 @@
 import React, { Component } from 'react';
 
 class Shop extends Component {
-  state = {};
   render() {
+    const { shopCategories, socialLinks } = this.props.shop;
     return (
       <div className="shop-page">
-        <h2>I am shop page. Lets go shopping, girl</h2>
+        <aside className="categories-aside">
+          <div className="categories">
+            <ul>
+              {shopCategories.map((item) => (
+                <li key={item._id} className="categories-list-item">
+                  {item.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="social">
+            {socialLinks.map((item) => (
+              <a href={item.to}>
+                <i key={item.to} className={item.icon}></i>
+              </a>
+            ))}
+          </div>
+        </aside>
       </div>
     );
   }
