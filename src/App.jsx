@@ -28,7 +28,7 @@ class App extends Component {
       ],
       items: [
         { _id: 1, title: 'Redneck hat', price: 99.99, image: 'acc_hat_01_', color: 'Green', size: 'L' },
-        { _id: 2, title: 'Navy jeans', price: 1099.99, image: 'jack_jeans_01_', color: 'Navy', size: 'M' },
+        { _id: 2, title: 'Navy jeans', price: 1199.99, image: 'jack_jeans_01_', color: 'Navy', size: 'M' },
         {
           _id: 3,
           title: 'Granite Oversized T-Shirt',
