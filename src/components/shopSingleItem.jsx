@@ -1,23 +1,47 @@
 import React, { Component } from 'react';
 import Button from './common/button/button';
-import SocialIcons from './socialIcons';
+import SocialIcons from './common/socialIcons';
 
 class SingleItem extends Component {
+  state = {
+    mainImage: '',
+    images: [],
+  };
+
+  componentDidMount() {
+    const { item } = this.props;
+    const imagesRequired = item.images.map(
+      (imgNo) => require(`../static/shop/accessories/${item.image}${imgNo}.jpg`).default
+    );
+    this.setState({ images: imagesRequired, mainImage: imagesRequired[1] });
+  }
+
+  handleMainImage = (img) => {
+    this.setState({ mainImage: img });
+  };
+
   render() {
+    const { socialLinksData, item } = this.props;
     return (
       <div className="single-shop-item">
         <div className="d-flex">
           <div className="single__images-part w-50">
-            <img className="single__main-image" src="https://placeimg.com/640/480/any/sepia" alt="main" />
+            <img className="single__main-image" src={this.state.mainImage} alt="main" />
             <div className="single__photos d-flex flex-wrap">
-              {[1, 2, 3].map((img) => (
-                <img src="https://placeimg.com/100/100/any/sepia" alt="" />
+              {this.state.images.map((img) => (
+                <img
+                  onClick={() => this.handleMainImage(img)}
+                  key={img}
+                  className="single__item-image"
+                  src={img}
+                  alt=""
+                />
               ))}
             </div>
           </div>
           <div className="single__item-info-part">
-            <h2 className="item-info__title">Title</h2>
-            <p className="item-info__price">300 eur</p>
+            <h2 className="item-info__title">{item.title}</h2>
+            <p className="item-info__price">{item.price} eur</p>
             <div className="item-info__options d-flex">
               <div>
                 <label htmlFor="colors">Colors</label>
@@ -39,10 +63,9 @@ class SingleItem extends Component {
               </div>
             </div>
             <Button outline>Add to cart</Button>
+            <br />
             <Button>Buy it now</Button>
-            <div>
-              <SocialIcons shop={this.props.shop} />
-            </div>
+            <SocialIcons titlesOn socialLinksData={socialLinksData} />
           </div>
         </div>
         <p className="single-item__description">

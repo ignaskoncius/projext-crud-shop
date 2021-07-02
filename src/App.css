@@ -15,7 +15,7 @@ a {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -87,7 +87,13 @@ img {
 }
 
 .social__link {
-  margin-right: 0.5em;
+  padding-right: 0.5em;
+  font-size: 1.2em;
+}
+
+.sup {
+  font-size: 0.5em;
+  margin-left: 3px;
 }
 
 /* Shop item */
@@ -99,4 +105,37 @@ img {
   font-size: 1em;
   font-weight: normal;
   margin-bottom: 0.2em;
+}
+
+/* Single item page */
+
+.single__main-image {
+  width: 100%;
+}
+
+.single__item-image {
+  width: 25%;
+  cursor: pointer;
+}
+
+.item-info__title {
+  font-weight: normal;
+  font-size: 1.7em;
+  margin-bottom: 0.3em;
+}
+
+.item-info__price {
+  font-size: 1.1em;
+  margin-bottom: 2em;
+}
+
+.item-info__options {
+  margin-bottom: 1em;
+}
+.item-info__options select {
+  font-size: 1em;
+}
+
+.single__item-info-part Button:last-of-type {
+  margin-bottom: 3em;
 }

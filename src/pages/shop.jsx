@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import ShopList from '../components/shopList';
 import SingleItem from '../components/shopSingleItem';
-import SocialIcons from '../components/socialIcons';
+import SocialIcons from '../components/common/socialIcons';
 
 class Shop extends Component {
   render() {
-    const { shopCategories, items } = this.props.shop;
+    const { shopCategories, items, socialLinksData } = this.props.shop;
     return (
       <div className="shop-page d-flex">
         <aside className="categories-aside">
@@ -19,11 +19,16 @@ class Shop extends Component {
               ))}
             </ul>
           </div>
-          <SocialIcons shop={this.props.shop} />
+          <SocialIcons socialLinksData={socialLinksData} />
         </aside>
         <main>
           <Switch>
-            <Route path="/shop/item/1" render={(props) => <SingleItem shop={this.props.shop} {...props} />} />
+            <Route
+              path="/shop/item/1"
+              render={(props) => (
+                <SingleItem item={items.find((i) => i._id === 1)} socialLinksData={socialLinksData} {...props} />
+              )}
+            />
             <Route path="/shop" render={(props) => <ShopList items={items} {...props} />} />
           </Switch>
         </main>

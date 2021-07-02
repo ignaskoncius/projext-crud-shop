@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 class SocialIcons extends Component {
   render() {
-    const { socialLinks } = this.props.shop;
+    const { socialLinksData, titlesOn } = this.props;
     return (
       <div className="social">
-        {socialLinks.map((item) => (
+        {socialLinksData.map((item) => (
           <a key={item.to} href={item.to} target="_blank" rel="noreferrer" className="social__link">
             <i className={item.icon}></i>
+            {titlesOn ? <sup className="sup">{item.title}</sup> : ''}
           </a>
         ))}
       </div>
