@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import ShopList from '../components/shopList';
 import SingleItem from '../components/shopSingleItem';
+import SocialIcons from '../components/socialIcons';
 
 class Shop extends Component {
   render() {
@@ -18,6 +19,8 @@ class Shop extends Component {
               ))}
             </ul>
           </div>
+          {/* <SocialIcons /> */}
+
           <div className="social">
             {socialLinks.map((item) => (
               <a key={item.to} href={item.to} target="_blank" rel="noreferrer" className="social__link">
