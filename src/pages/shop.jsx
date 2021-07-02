@@ -26,7 +26,12 @@ class Shop extends Component {
             <Route
               path="/shop/item/1"
               render={(props) => (
-                <SingleItem item={items.find((i) => i._id === 1)} socialLinksData={socialLinksData} {...props} />
+                <SingleItem
+                  items={items}
+                  item={items.find((i) => i._id === 1)}
+                  socialLinksData={socialLinksData}
+                  {...props}
+                />
               )}
             />
             <Route path="/shop" render={(props) => <ShopList items={items} {...props} />} />

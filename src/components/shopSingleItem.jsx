@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Button from './common/button/button';
 import SocialIcons from './common/socialIcons';
+import YouMayAlsoLike from './youMayAlsoLike';
 
 class SingleItem extends Component {
   state = {
@@ -21,7 +22,7 @@ class SingleItem extends Component {
   };
 
   render() {
-    const { socialLinksData, item } = this.props;
+    const { socialLinksData, item, items } = this.props;
     return (
       <div className="single-shop-item">
         <div className="d-flex">
@@ -74,6 +75,7 @@ class SingleItem extends Component {
           tonal woven hem label. The fabric is treated with a dirty dye effect for a vintage look and is finished off
           with a heavy enzyme wash and silicone softener for a soft and smooth handle.
         </p>
+        <YouMayAlsoLike relatedItems={items}></YouMayAlsoLike>
       </div>
     );
   }
