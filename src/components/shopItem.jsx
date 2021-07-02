@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import mainImage from '../static/shop/accessories/acc_hat_01_1.jpg';
 import { Link } from 'react-router-dom';
 
 class ShopItem extends Component {

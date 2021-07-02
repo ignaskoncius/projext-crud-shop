@@ -6,7 +6,7 @@ import SocialIcons from '../components/socialIcons';
 
 class Shop extends Component {
   render() {
-    const { shopCategories, socialLinks, items } = this.props.shop;
+    const { shopCategories, items } = this.props.shop;
     return (
       <div className="shop-page d-flex">
         <aside className="categories-aside">
@@ -19,19 +19,11 @@ class Shop extends Component {
               ))}
             </ul>
           </div>
-          {/* <SocialIcons /> */}
-
-          <div className="social">
-            {socialLinks.map((item) => (
-              <a key={item.to} href={item.to} target="_blank" rel="noreferrer" className="social__link">
-                <i className={item.icon}></i>
-              </a>
-            ))}
-          </div>
+          <SocialIcons shop={this.props.shop} />
         </aside>
         <main>
           <Switch>
-            <Route path="/shop/item/1" render={(props) => <SingleItem {...props} />} />
+            <Route path="/shop/item/1" render={(props) => <SingleItem shop={this.props.shop} {...props} />} />
             <Route path="/shop" render={(props) => <ShopList items={items} {...props} />} />
           </Switch>
         </main>

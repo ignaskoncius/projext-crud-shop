@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from './common/button/button';
+import SocialIcons from './socialIcons';
 
 class SingleItem extends Component {
   render() {
@@ -39,7 +40,9 @@ class SingleItem extends Component {
             </div>
             <Button outline>Add to cart</Button>
             <Button>Buy it now</Button>
-            <div>social</div>
+            <div>
+              <SocialIcons shop={this.props.shop} />
+            </div>
           </div>
         </div>
         <p className="single-item__description">
