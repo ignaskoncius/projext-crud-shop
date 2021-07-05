@@ -23,7 +23,7 @@ class Footer extends Component {
             <p>Promotions, new products and sales. Directly to your inbox.</p>
             <div className="footer__input-group">
               <input type="text" placeholder="Your Email" />
-              <Button>Subscribe</Button>
+              <Button size="medium">Subscribe</Button>
             </div>
           </div>
         </div>
