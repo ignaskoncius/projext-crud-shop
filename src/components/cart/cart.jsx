@@ -3,6 +3,10 @@ import CartList from '../cartList';
 import Button from '../common/button/button';
 
 class Cart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render() {
     return (
       <div>

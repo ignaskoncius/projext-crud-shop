@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class CartItem extends Component {
+  state = {
+    qty: 1,
+  };
+
+  handleQty = (event) => {
+    this.setState({ qty: event.target.value });
+  };
+
   render() {
     return (
       <div className="cart-item d-flex">
@@ -20,7 +28,7 @@ class CartItem extends Component {
           <h3 className="price">1000 eur</h3>
         </div>
         <div className="cart-col">
-          <input className="cart-qty" type="number" value="1" />
+          <input className="cart-qty" type="number" value={this.state.qty} onChange={this.handleQty} />
         </div>
         <div className="cart-col">
           <h3 className="price-total">1000 eur</h3>
