@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Button from './common/button/button';
 
 class CartItem extends Component {
   state = {
     qty: 1,
+    image: '',
+    total: 0,
   };
 
   handleQty = (event) => {
@@ -12,16 +15,17 @@ class CartItem extends Component {
 
   componentDidMount() {
     const { image, quantity } = this.props.item;
-    this.setState({ qty: quantity });
+    const imgImported = require(`../static/shop/accessories/${image}1.jpg`).default;
+    this.setState({ qty: quantity, image: imgImported });
   }
 
   render() {
-    const { price, title, image, color, size } = this.props.item;
+    const { price, title, color, size } = this.props.item;
     return (
       <div className="cart-item d-flex">
         <div className="item-preview d-flex cart-col first">
           <Link to="/">
-            <img src="https://placeimg.com/150/100/any" alt="" />
+            <img src={this.state.image} alt="clothes" />
           </Link>
           <div className="order-item-info">
             <Link to="/" />
@@ -29,7 +33,7 @@ class CartItem extends Component {
             <p>
               {color} / {size}
             </p>
-            <button>remove</button>
+            <Button link>remove</Button>
           </div>
         </div>
         <div className="cart-col">

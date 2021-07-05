@@ -241,6 +241,7 @@ textarea:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .cart-qty {
@@ -249,6 +250,10 @@ textarea:focus-visible {
 
 .cart-columns {
   margin-bottom: 1.5em;
+}
+
+.item-preview img {
+  max-height: 125px;
 }
 
 /* Cart table like columns */

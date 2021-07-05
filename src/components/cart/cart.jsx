@@ -5,7 +5,9 @@ import Button from '../common/button/button';
 class Cart extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      cartTotal: 0,
+    };
   }
   render() {
     return (
@@ -21,7 +23,7 @@ class Cart extends Component {
           </div>
           <div className="cart-info">
             <h4 className="cart__title">
-              Subtotal <span>1,159.99 eur</span>
+              Subtotal <span>{this.state.cartTotal} eur</span>
             </h4>
             <i>Taxes and shipping calculated at checkout</i>
             <Button outline>Continue shopping</Button>
