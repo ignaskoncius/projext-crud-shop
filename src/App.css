@@ -200,7 +200,7 @@ textarea:focus-visible {
 
 .footer__input-group {
   display: flex;
-  margin: 1em;
+  margin: 1em 0;
 }
 
 .footer__input-group input {

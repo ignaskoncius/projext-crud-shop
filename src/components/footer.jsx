@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Button from './button/button';
+import Button from './common/button/button';
 
 class Footer extends Component {
   render() {
@@ -28,9 +28,9 @@ class Footer extends Component {
           </div>
         </div>
         <div className="hr"></div>
-        <div className="footer-bot d-flex space-between">
-          <div>Copyright</div>
-          <div>Cards</div>
+        <div className="footer-bottom d-flex space-between">
+          <div className="footer__copy">Copyright © 2021, Simple. Powered by Shopify</div>
+          <div className="footer__cards">Cards</div>
         </div>
       </div>
     );

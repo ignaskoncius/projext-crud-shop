@@ -21,6 +21,7 @@ class Cart extends Component {
             </h4>
             <i>Taxes and shipping calculated at checkout</i>
             <Button outline>Continue shopping</Button>
+            <br />
             <Button>Check out</Button>
           </div>
         </div>
