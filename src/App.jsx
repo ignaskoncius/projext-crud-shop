@@ -56,6 +56,28 @@ class App extends Component {
           images: [1, 2, 3, 4, 5],
         },
       ],
+      cart: [
+        {
+          _id: 1,
+          title: 'Redneck hat',
+          price: 99.99,
+          image: 'acc_hat_01_',
+          color: 'Green',
+          size: 'L',
+          sku: 'hat_01',
+          quantity: 1,
+        },
+        {
+          _id: 2,
+          title: 'Redneck T-Shirt',
+          price: 369.99,
+          image: 'shirt_01_',
+          color: 'Washed Black',
+          size: 'XL',
+          sku: '01',
+          quantity: 2,
+        },
+      ],
     },
   };
   render() {
