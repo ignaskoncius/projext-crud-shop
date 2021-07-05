@@ -10,7 +10,7 @@ class CartItem extends Component {
   };
 
   getTotal() {
-    return this.state.qty * this.props.item.price;
+    return (this.state.qty * this.props.item.price).toFixed(2);
   }
 
   handleQty = (event) => {
