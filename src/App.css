@@ -35,6 +35,10 @@ h6 {
   font-weight: normal;
 }
 
+.d-upto-800 {
+  display: none;
+}
+
 /* Variables */
 :root {
   --primary: #333;
@@ -257,4 +261,30 @@ textarea:focus-visible {
 .cart-col.first {
   width: auto;
   text-align: left;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 800px) {
+  .d-upto-800 {
+    display: block;
+  }
+  .cart-col {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .cart-columns {
+    display: none;
+  }
+  .cart-item,
+  .item-preview {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .cart-item {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 1em 0 1.5em;
+  }
 }
