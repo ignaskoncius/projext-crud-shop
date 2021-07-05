@@ -12,15 +12,27 @@
 a {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
 }
 
 .container {
+  padding-left: 1em;
+  padding-right: 1em;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 img {
   max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 
 /* Variables */
@@ -51,6 +63,16 @@ img {
   height: 1px;
   background-color: rgb(218, 218, 218);
   margin: 1.5em 0;
+}
+
+.d-block {
+  display: block;
+}
+
+input {
+  background-color: rgb(238, 238, 238);
+  border: 1px solid rgb(238, 238, 238);
+  padding: 0.5em 0.3em;
 }
 
 /* Header */
@@ -156,4 +178,15 @@ img {
   font-weight: normal;
   font-size: 1.2em;
   margin-bottom: 1em;
+}
+
+/* Footer */
+
+.footer__title {
+  font-size: 1.1em;
+  margin-bottom: 0.8em;
+}
+
+.footer__nav-link {
+  line-height: 1.5;
 }

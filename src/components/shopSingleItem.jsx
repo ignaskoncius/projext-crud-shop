@@ -7,14 +7,16 @@ class SingleItem extends Component {
   state = {
     mainImage: '',
     images: [],
+    currentItemId: '',
+    currrentItem: {},
   };
 
   componentDidMount() {
-    const { item } = this.props;
-    const imagesRequired = item.images.map(
-      (imgNo) => require(`../static/shop/accessories/${item.image}${imgNo}.jpg`).default
-    );
-    this.setState({ images: imagesRequired, mainImage: imagesRequired[1] });
+    const currentItemId = +this.props.match.params.id;
+    const item = this.props.items.find((i) => i._id === currentItemId);
+    const { images, image } = item;
+    const imagesRequired = images.map((imgNo) => require(`../static/shop/accessories/${image}${imgNo}.jpg`).default);
+    this.setState({ images: imagesRequired, mainImage: imagesRequired[1], currentItemId, currrentItem: item });
   }
 
   handleMainImage = (img) => {
@@ -22,7 +24,8 @@ class SingleItem extends Component {
   };
 
   render() {
-    const { socialLinksData, item, items } = this.props;
+    const { socialLinksData, items } = this.props;
+    const item = this.state.currrentItem;
     return (
       <div className="single-shop-item">
         <div className="d-flex">

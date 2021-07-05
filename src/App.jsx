@@ -4,6 +4,7 @@ import './App.css';
 import HeaderX from './components/headerX';
 import Home from './pages/home';
 import Shop from './pages/shop';
+import Footer from './components/common/footer';
 import 'font-awesome/css/font-awesome.css';
 
 class App extends Component {
@@ -58,17 +59,19 @@ class App extends Component {
     },
   };
   render() {
+    const { navLinks, shop } = this.state;
     return (
       <div className="App">
-        <HeaderX navLinks={this.state.navLinks} />
+        <HeaderX navLinks={navLinks} />
         <div className="container">
           <Switch>
             {/* kai reikia perduoti props i route mes tai darom su sekancia sintakse */}
 
-            <Route path="/shop" render={(props) => <Shop shop={this.state.shop} {...props} />} />
+            <Route path="/shop" render={(props) => <Shop shop={shop} {...props} />} />
             <Route exact path="/" component={Home} />
           </Switch>
         </div>
+        <Footer navLinks={navLinks} />
       </div>
     );
   }

@@ -24,11 +24,11 @@ class Shop extends Component {
         <main>
           <Switch>
             <Route
-              path="/shop/item/1"
+              path="/shop/item/:id"
               render={(props) => (
                 <SingleItem
                   items={items}
-                  item={items.find((i) => i._id === 1)}
+                  // item={items.find((i) => i._id === props.match.params.id)}
                   socialLinksData={socialLinksData}
                   {...props}
                 />
