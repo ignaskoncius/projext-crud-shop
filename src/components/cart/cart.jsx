@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CartList from '../cartList';
+import CartList from './cartList';
 import Button from '../common/button/button';
 
 class Cart extends Component {

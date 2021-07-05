@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Button from './common/button/button';
+import Button from '../common/button/button';
 
 class CartItem extends Component {
   state = {
@@ -9,14 +9,24 @@ class CartItem extends Component {
     total: 0,
   };
 
+  getTotal() {
+    return this.state.qty * this.props.item.price;
+  }
+
   handleQty = (event) => {
     this.setState({ qty: event.target.value });
   };
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.qty !== this.state.qty) {
+      this.setState({ total: this.getTotal() });
+    }
+  }
+
   componentDidMount() {
     const { image, quantity } = this.props.item;
-    const imgImported = require(`../static/shop/accessories/${image}1.jpg`).default;
-    this.setState({ qty: quantity, image: imgImported });
+    const imgImported = require(`../../static/shop/accessories/${image}1.jpg`).default;
+    this.setState({ qty: quantity, image: imgImported, total: this.getTotal() });
   }
 
   render() {
@@ -46,7 +56,7 @@ class CartItem extends Component {
         </div>
         <div className="cart-col">
           <h3 className="d-upto-800">Total</h3>
-          <h3 className="price-total">1000 eur</h3>
+          <h3 className="price-total">{this.state.total} eur</h3>
         </div>
       </div>
     );
