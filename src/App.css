@@ -69,13 +69,15 @@ h6 {
   display: block;
 }
 
-input {
+input,
+textarea {
   background-color: rgb(238, 238, 238);
   border: 1px solid rgb(238, 238, 238);
   padding: 0.5em 0.3em;
 }
 
-input:focus-visible {
+input:focus-visible,
+textarea:focus-visible {
   outline: none;
   border: 1px solid var(--primary);
 }
@@ -198,9 +200,27 @@ input:focus-visible {
 
 .footer__input-group {
   display: flex;
-  margin: 1em 0;
+  margin: 1em;
 }
 
 .footer__input-group input {
   flex-grow: 1;
+}
+
+/* Cart */
+
+.cart-info {
+  text-align: right;
+}
+
+.cart__title {
+  margin-bottom: 0.6em;
+}
+.cart-info i {
+  margin-bottom: 1.6em;
+  display: inline-block;
+}
+
+.cart-info Button {
+  margin-bottom: 0.5em;
 }

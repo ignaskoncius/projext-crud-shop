@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 import ShopList from '../components/shopList';
 import SingleItem from '../components/shopSingleItem';
 import SocialIcons from '../components/common/socialIcons';
+import Cart from '../components/cart';
 
 class Shop extends Component {
   render() {
@@ -34,6 +35,7 @@ class Shop extends Component {
                 />
               )}
             />
+            <Route path="/shop/cart" render={(props) => <Cart items={{}} {...props} />} />
             <Route path="/shop" render={(props) => <ShopList items={items} {...props} />} />
           </Switch>
         </main>
