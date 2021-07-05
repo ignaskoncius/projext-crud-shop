@@ -28,6 +28,10 @@ class Footer extends Component {
           </div>
         </div>
         <div className="hr"></div>
+        <div className="footer-bot d-flex space-between">
+          <div>Copyright</div>
+          <div>Cards</div>
+        </div>
       </div>
     );
   }
