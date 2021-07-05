@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-
-import Button from './common/button/button';
+import CartList from '../cartList';
+import Button from '../common/button/button';
 
 class Cart extends Component {
   render() {
     return (
       <div>
         <div className="cartList">
-          <h4>Cart list</h4>
+          <CartList></CartList>
         </div>
         <div className="d-flex">
           <div className="cart__instructions">

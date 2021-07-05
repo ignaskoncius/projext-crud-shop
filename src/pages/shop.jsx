@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router';
 import ShopList from '../components/shopList';
 import SingleItem from '../components/shopSingleItem';
 import SocialIcons from '../components/common/socialIcons';
-import Cart from '../components/cart';
+import Cart from '../components/cart/cart';
 
 class Shop extends Component {
   render() {
