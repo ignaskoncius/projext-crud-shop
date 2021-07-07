@@ -34,7 +34,7 @@ class Shop extends Component {
             </div>
             <SocialIcons socialLinksData={socialLinksData} />
           </aside>
-          <main>
+          <main className="shop-items-part">
             <Switch>
               <Route
                 path="/shop/item/:id"

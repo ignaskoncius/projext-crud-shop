@@ -25,7 +25,7 @@ class App extends Component {
       socialLinksData: [
         { to: 'https://www.facebook.com', icon: 'fa fa-facebook', title: 'share' },
         { to: 'https://www.twitter.com', icon: 'fa fa-twitter', title: 'tweet' },
-        { to: 'https://www.instagram.com', icon: 'fa fa-instagram', title: 'Pin it' },
+        { to: 'https://www.instagram.com', icon: 'fa fa-instagram', title: 'pin it' },
       ],
       items: [
         {
@@ -38,6 +38,7 @@ class App extends Component {
           size: 'L',
           images: [1, 2, 3, 4, 5],
           quantity: 9,
+          category: 'Accessories',
         },
         {
           _id: 2,
@@ -47,6 +48,7 @@ class App extends Component {
           color: 'Navy',
           size: 'M',
           images: [1, 2, 3, 4, 5, 6],
+          category: 'Jeans',
         },
         {
           _id: 3,
@@ -57,6 +59,18 @@ class App extends Component {
           color: 'Washed Black',
           size: 'XL',
           images: [1, 2, 3, 4, 5],
+          category: 'T-Shirts',
+        },
+        {
+          _id: 4,
+          title: 'Cowboy suede boots',
+          price: 299.69,
+          image: 'foot_cowboy_01_',
+          color: 'Sand',
+          size: 'Normal',
+          images: [1, 2, 3, 4],
+          quantity: 5,
+          category: 'Footwear',
         },
       ],
       cart: [
