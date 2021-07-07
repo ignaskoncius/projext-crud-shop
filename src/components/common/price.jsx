@@ -3,7 +3,7 @@ import css from './price.module.css';
 const Price = (props) => {
   const { salePrice, children } = props;
   return (
-    <p className="">
+    <p className="price">
       <span className={salePrice ? css.salePrice : ''}>{formatPrice(salePrice)}</span>{' '}
       <span className={salePrice ? css.oldPrice : ''}>{formatPrice(children)}</span>
     </p>

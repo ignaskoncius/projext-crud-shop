@@ -30,7 +30,8 @@ class SingleItem extends Component {
     return (
       <div className="single-shop-item">
         <div className="d-flex">
-          <div className="single__images-part w-50">
+          <div className="single__images-part w-50 pos-rel">
+            {item.salePrice && <span className="sale">Sale</span>}
             <img className="single__main-image" src={this.state.mainImage} alt="main" />
             <div className="single__photos d-flex flex-wrap">
               {this.state.images.map((img) => (

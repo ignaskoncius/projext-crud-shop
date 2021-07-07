@@ -52,6 +52,7 @@ class App extends Component {
           _id: 3,
           title: 'Redneck T-Shirt',
           price: 369.99,
+          salePrice: 119.99,
           image: 'shirt_01_',
           color: 'Washed Black',
           size: 'XL',
