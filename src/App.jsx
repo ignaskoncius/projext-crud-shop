@@ -32,10 +32,12 @@ class App extends Component {
           _id: 1,
           title: 'Redneck hat',
           price: 99.99,
+          salePrice: 19.99,
           image: 'acc_hat_01_',
           color: 'Green',
           size: 'L',
           images: [1, 2, 3, 4, 5],
+          quantity: 9,
         },
         {
           _id: 2,
