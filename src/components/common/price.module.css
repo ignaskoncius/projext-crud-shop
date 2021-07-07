@@ -1,0 +1,6 @@
+.oldPrice {
+  text-decoration: line-through;
+}
+.salePrice {
+  color: rgb(206, 56, 56);
+}
