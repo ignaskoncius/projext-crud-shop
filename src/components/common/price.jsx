@@ -1,22 +1,20 @@
 import css from './price.module.css';
 
 const Price = (props) => {
+  const { salePrice, children } = props;
   return (
-    <div className="price">
-      {props.salePrice ? (
-        <p>
-          <span className={css.salePrice}>{formatPrice(props.salePrice)}</span>
-          <span className={css.oldPrice}>{formatPrice(props.children)}</span>
-        </p>
-      ) : (
-        <span>{formatPrice(props.children)}</span>
-      )}
-    </div>
+    <p className="">
+      <span className={salePrice ? css.salePrice : ''}>{formatPrice(salePrice)}</span>{' '}
+      <span className={salePrice ? css.oldPrice : ''}>{formatPrice(children)}</span>
+    </p>
   );
 };
 
 function formatPrice(price) {
-  return price.toFixed(2) + ' eur ';
+  if (!price) return;
+  //   TODO: solve 99.999 problem returning 100 instead of 99.99
+  const roundPrice = price.toFixed(2) + ' eur ';
+  return roundPrice;
 }
 
 export default Price;

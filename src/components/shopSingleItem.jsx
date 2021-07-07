@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from './common/button/button';
+import Price from './common/price';
 import SocialIcons from './common/socialIcons';
 import YouMayAlsoLike from './youMayAlsoLike';
 
@@ -45,7 +46,7 @@ class SingleItem extends Component {
           </div>
           <div className="single__item-info-part">
             <h2 className="item-info__title">{item.title}</h2>
-            <p className="item-info__price">{item.price} eur</p>
+            <Price salePrice={item.salePrice}>{item.price}</Price>
             <div className="item-info__options d-flex">
               <div>
                 <label htmlFor="colors">Colors</label>
