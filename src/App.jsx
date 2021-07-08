@@ -6,6 +6,7 @@ import Home from './pages/home';
 import Shop from './pages/shop';
 import Footer from './components/footer';
 import 'font-awesome/css/font-awesome.css';
+import axios from 'axios';
 
 class App extends Component {
   state = {
@@ -35,9 +36,21 @@ class App extends Component {
           salePrice: 19.99,
           image: 'acc_hat_01_',
           color: 'Green',
-          size: 'L',
+          sizeQty: [
+            {
+              size: 'small',
+              quantity: 10,
+            },
+            {
+              size: 'medium',
+              quantity: 5,
+            },
+            {
+              size: 'large',
+              quantity: 15,
+            },
+          ],
           images: [1, 2, 3, 4, 5],
-          quantity: 9,
           category: 'Accessories',
         },
         {
@@ -45,8 +58,8 @@ class App extends Component {
           title: 'Redneck jeans',
           price: 1199.99,
           image: 'jack_jeans_01_',
-          color: 'Navy',
-          size: 'M',
+          color: 'Yellow',
+          size: ['Small', 'Normal', 'Large'],
           images: [1, 2, 3, 4, 5, 6],
           category: 'Jeans',
         },
@@ -56,8 +69,8 @@ class App extends Component {
           price: 369.99,
           salePrice: 119.99,
           image: 'shirt_01_',
-          color: 'Washed Black',
-          size: 'XL',
+          color: 'Gray',
+          size: ['Small', 'Normal', 'Large'],
           images: [1, 2, 3, 4, 5],
           category: 'T-Shirts',
         },
@@ -67,7 +80,7 @@ class App extends Component {
           price: 299.69,
           image: 'foot_cowboy_01_',
           color: 'Sand',
-          size: 'Normal',
+          size: ['Small', 'Normal', 'Large'],
           images: [1, 2, 3, 4],
           quantity: 5,
           category: 'Footwear',
@@ -83,6 +96,7 @@ class App extends Component {
           size: 'L',
           sku: 'hat_01',
           quantity: 1,
+          // userId: 'links to user',
         },
         {
           _id: 2,
@@ -97,6 +111,21 @@ class App extends Component {
       ],
     },
   };
+
+  async componentDidMount() {
+    console.log('app mounted');
+    // axios
+    //   .get('http://localhost:4000/api/shop/categories')
+    //   .then((result) => console.log(result.data))
+    //   .catch((err) => console.log(err));
+    try {
+      const { data } = await axios.get('http://localhost:4000/api/shop/categories');
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   render() {
     const { navLinks, shop } = this.state;
     return (
